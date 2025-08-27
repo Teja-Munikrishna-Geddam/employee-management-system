@@ -11,7 +11,7 @@ const FetchAllEmployee = () => {
   // Refresh (fetch all)
 const refreshEmployees = () => {
     axios
-      .get("http://localhost:9090/api/employees")
+      .get("https://employee-management-system.onrender.com/api")
       .then((response) => {
         console.log("All employees:", response.data);
         setEmployees(response.data);
@@ -29,7 +29,7 @@ const refreshEmployees = () => {
   const fetchById = () => {
     if (!employeeId) return;
     axios
-      .get(`http://localhost:9090/api/employees/id/${employeeId}`)
+      .get(`https://employee-management-system.onrender.com/api/id/${employeeId}`)
       .then((response) => {
         console.log("Employee by ID:", response.data);
         setEmployees([response.data]); // only one record by id
@@ -43,7 +43,7 @@ const refreshEmployees = () => {
     if (!employeeName) return;
 
     axios
-      .get(`http://localhost:9090/api/employees/name/${employeeName}`)
+      .get(`https://employee-management-system.onrender.com/api/name/${employeeName}`)
       .then((response) => {
         console.log("Employee(s) By Name:", response.data);
 
@@ -69,7 +69,7 @@ const refreshEmployees = () => {
   const deleteById = () => {
     if (!employeeId) return;
     axios
-      .delete(`http://localhost:9090/api/employees/${employeeId}`)
+      .delete(`https://employee-management-system.onrender.com/api/employees/${employeeId}`)
       .then(() => {
         alert("Employee deleted successfully!!!");
         refreshEmployees(); // reload all employees
