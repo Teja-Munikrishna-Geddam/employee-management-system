@@ -24,7 +24,7 @@ const AddEmployee = () => {
   const handleAdd = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:9090/api/employees", employee)
+      .post("https://employee-management-system.onrender.com/api/data", employee)
       .then(() => {
         alert("Employee added successfully!");
         setEmployee({ name: "", salary: "", department: "", email: "" });
@@ -42,7 +42,7 @@ const AddEmployee = () => {
       return;
     }
     axios
-      .put(`http://localhost:9090/api/employees/${employeeId}`, employee)
+      .put(`https://employee-management-system.onrender.com/api/data/${employeeId}`, employee)
       .then(() => {
         alert("Employee updated successfully!");
         setEmployeeId("");
